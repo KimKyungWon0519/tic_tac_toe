@@ -1,0 +1,2 @@
+C:\Users\gwon0\source\repos\tic_tac_toe\Debug\tic_tac_toe.exe
+C:\Users\gwon0\source\repos\tic_tac_toe\Debug\tic_tac_toe.pdb
