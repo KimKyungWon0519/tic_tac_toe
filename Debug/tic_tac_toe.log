@@ -1,4 +1,4 @@
 ﻿  소스.c
-C:\Users\gwon0\source\repos\tic_tac_toe\소스.c(104,12): warning C4101: 'posY' :참조되지 않은 지역 변수입니다.
-C:\Users\gwon0\source\repos\tic_tac_toe\소스.c(104,6): warning C4101: 'posX' :참조되지 않은 지역 변수입니다.
+C:\Users\gwon0\source\repos\tic_tac_toe\소스.c(110,12): warning C4101: 'posY' :참조되지 않은 지역 변수입니다.
+C:\Users\gwon0\source\repos\tic_tac_toe\소스.c(110,6): warning C4101: 'posX' :참조되지 않은 지역 변수입니다.
   tic_tac_toe.vcxproj -> C:\Users\gwon0\source\repos\tic_tac_toe\Debug\tic_tac_toe.exe

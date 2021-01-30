@@ -8,6 +8,12 @@
 #define BLUE 1
 #define YELLOW 6
 
+enum {
+	NONE = 0,
+	PALYER_1,
+	PALYER_2
+};
+
 char background[13][13] = {
 	{'-','-','-','-','-','-','-','-','-','-','-','-','-',},
 	{'|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|'},
@@ -75,10 +81,10 @@ void drawBackground() {
 					getBackgroundPosition(&x, &y);
 					getOorXarrayPostion(&x, &y);
 
-					if (OorX[y][x] == 1) {
+					if (OorX[y][x] == PALYER_1) {
 						setColor(RED);
 					}
-					else if (OorX[y][x] == 2) {
+					else if (OorX[y][x] == PALYER_2) {
 						setColor(BLUE);
 					}
 				}
@@ -155,9 +161,9 @@ void drawOorX(int player, int posX, int posY) {
 			int y = posY + i;
 			int x = posX + j;
 
-			if (player == 1)
+			if (player == PALYER_1)
 				background[y][x] = X[i][j];
-			if (player == 2)
+			if (player == PALYER_2)
 				background[y][x] = O[i][j];
 		}
 	}
@@ -239,15 +245,15 @@ int checkOorX() {
 void winnerLog(int winner) {
 	system("cls");
 
-	if (winner == 1) {
+	if (winner == PALYER_1) {
 		setColor(RED);
 		printf("player1이 이겼습니다 ! !\n\n");
 	}
-	else if (winner == 2) {
+	else if (winner == PALYER_2) {
 		setColor(BLUE);
 		printf("player2가 이겼습니다 ! !\n\n");
 	}
-	else if (winner == 0) {
+	else if (winner == NONE) {
 		setColor(YELLOW);
 		printf("무승부 입니다 ! !\n\n");
 	}
