@@ -7,7 +7,7 @@
 #define COUT GetStdHandle(STD_OUTPUT_HANDLE)
 #define WHITE 7
 #define RED 4
-#define BLUE 1
+#define BLUE 1	
 #define YELLOW 6
 
 enum {
@@ -113,8 +113,8 @@ void printGameStartScreen() {
 	printf("player1 : %d vs player2 : %d\n\n", score.player1, score.player2);
 
 	printf("[게임 메뉴]\n");
-	printf("%s 게임하기\n");
-	printf("%s 게임종료");
+	printf("게임하기\n");
+	printf("게임종료");
 }
 
 void inputGameMenu() {
