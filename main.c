@@ -113,8 +113,8 @@ void printGameStartScreen() {
 	printf("player1 : %d vs player2 : %d\n\n", score.player1, score.player2);
 
 	printf("[게임 메뉴]\n");
-	printf("%s 게임하기\n", gameMenu == GAME_START ? "▶" : "▷");
-	printf("%s 게임종료", gameMenu == GAME_EXIT ? "▶" : "▷");
+	printf("%s 게임하기\n");
+	printf("%s 게임종료");
 }
 
 void inputGameMenu() {
