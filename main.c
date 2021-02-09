@@ -102,12 +102,13 @@ void gameScreen() {
 
 void gameStartScreen() {
 	printGameStartScreen();
-	inputGameMenu();
+
+	while (gameFlag != 1) {
+		inputGameMenu();
+	}
 }
 
 void printGameStartScreen() {
-	system("cls");
-
 	printf("[현재 스코어]\n");
 	printf("player1 : %d vs player2 : %d\n\n", score.player1, score.player2);
 
@@ -120,9 +121,13 @@ void inputGameMenu() {
 	char key = getch();
 
 	if (key == 'w' || key == 'W') {
+		gotoMouseXY(0, 4);
+		printf("▶\n\r▷");
 		gameMenu = GAME_START;
 	}
 	else if (key == 's' || key == 'S') {
+		gotoMouseXY(0, 4);
+		printf("▷\n\r▶");
 		gameMenu = GAME_EXIT;
 	}
 	else if (key == '\r') {
