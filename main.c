@@ -74,7 +74,7 @@ void printGameBackground();
 void setColor(int color);
 void getBackgroundPosition(int* posX, int* posY);
 void getOorXarrayPostion(int* posX, int* posY);
-void mouseEvent();
+void gameEvent();
 void inputMouseSetting();
 void drawOorX(int player, int posX, int posY);
 int allReadyOorXDraw(int x, int y);
@@ -113,8 +113,8 @@ void printGameStartScreen() {
 	printf("player1 : %d vs player2 : %d\n\n", score.player1, score.player2);
 
 	printf("[게임 메뉴]\n");
-	printf("게임하기\n");
-	printf("게임종료");
+	printf("▶게임하기\n");
+	printf("▷게임종료");
 }
 
 void inputGameMenu() {
@@ -158,9 +158,10 @@ void gamePlayingScreen() {
 	}
 
 	printGameBackground();
+	inputMouseSetting();
 
 	while (gameFlag != 0) {
-		mouseEvent();
+		gameEvent();
 	}
 }
 
@@ -208,19 +209,21 @@ int allReadyOorXDraw(int x, int y) {
 	else return 1;
 }
 
-void mouseEvent() {
+void gameEvent() {
 
 	INPUT_RECORD record;
 	DWORD read;
 	int posX, posY;
 	int winner = -1;
 
-	inputMouseSetting();
+	
 
 	ReadConsoleInput(CIN, &record, 1, &read);
 
 	if (record.EventType == MOUSE_EVENT) {
-		if (record.Event.MouseEvent.dwButtonState & FROM_LEFT_1ST_BUTTON_PRESSED && !(record.Event.MouseEvent.dwEventFlags & MOUSE_MOVED) && !(record.Event.MouseEvent.dwEventFlags & DOUBLE_CLICK)) {
+		if (record.Event.MouseEvent.dwButtonState & FROM_LEFT_1ST_BUTTON_PRESSED
+			&& !(record.Event.MouseEvent.dwEventFlags & MOUSE_MOVED)
+			&& !(record.Event.MouseEvent.dwEventFlags & DOUBLE_CLICK)) {
 			int posX = record.Event.MouseEvent.dwMousePosition.X;
 			int posY = record.Event.MouseEvent.dwMousePosition.Y;
 
